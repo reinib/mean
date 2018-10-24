@@ -20,8 +20,5 @@ export class HomeComponent implements OnInit {
       this.allProducts = data;
     })
   }
-  index(){
-    allProducts.idnexOf(product);
-  }
 
 }
