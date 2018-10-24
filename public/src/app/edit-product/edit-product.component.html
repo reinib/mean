@@ -1,0 +1,44 @@
+<h1>Update Product</h1>
+<div>
+  <form class="ng-valid-required">
+    <label for="title">Name</label>
+    <input type="text" name="title"
+    required
+    minlength="3"
+    [(ngModel)]="product.title"
+    [value]="product.title"
+    #title="ngModel">
+
+    {{title.errors|json}}
+    {{title.valid|json}}
+    <br>
+
+    <label for="qty">Qty</label>
+    <input type="text" name="qty"
+    required
+    pattern="^[0-9]*$"
+    [(ngModel)]="product.qty"
+    [value]="product.qty"
+    #qty="ngModel">
+
+    {{qty.errors|json}}
+    {{qty.valid|json}}
+    <br>
+
+    <label for="price">Price</label>
+    <input type="text" name="price"
+    required
+    pattern="^\d+\.\d{0,2}$"
+    [(ngModel)]="product.price"
+    [value]="product.price"
+    #price="ngModel">
+
+    {{price.errors|json}}
+    {{price.valid|json}}
+    <br>
+    <div *ngIf="$valid" (click)='updateProduct()'>
+
+    </div>
+    <input type="submit" value="Reset" (click)='resetProduct()'> <input type="submit" value="Update" (click)='updateProduct()'>
+  </form>
+</div>

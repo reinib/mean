@@ -1,0 +1,20 @@
+<style media="screen">
+  h3{
+    display: inline-block;
+  }
+  h4{
+    display: inline-block;
+    margin-left: 45px;
+  }
+</style>
+<h1>Product Details</h1>
+
+<div>
+  <h3>Name</h3>
+  <h4>{{product.title}}</h4><br>
+  <h3>Qty</h3>
+  <h4>{{product.qty}}</h4><br>
+  <h3>Price</h3>
+  <h4>{{product.price}}</h4><br>
+  <a href="/"><button>Back</button></a> | <input *ngIf="product.qty == 0" type="submit" name="" (click)="deleteProduct(product._id)" value="Delete">
+</div>

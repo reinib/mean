@@ -1,0 +1,42 @@
+<h1>Create a New Product</h1>
+<div>
+  <h2>New Product</h2>
+  <form>
+    <label for="title">Name</label>
+    <input type="text" name="title"
+    required
+    minlength="3"
+    [(ngModel)]="product.title"
+    #title="ngModel">
+
+    {{title.errors|json}}
+    {{title.valid|json}}
+    <br>
+
+    <label for="qty">Qty</label>
+    <input type="text" name="qty"
+    required
+    pattern="^[0-9]*$"
+    [(ngModel)]="product.qty"
+    #qty="ngModel">
+
+    {{qty.errors|json}}
+    {{qty.valid|json}}
+    <br>
+
+    <label for="price">Price</label>
+    <input type="text" name="price"
+    required
+    pattern="^\d+\.\d{0,2}$"
+    [(ngModel)]="product.price"
+    #price="ngModel">
+
+    {{price.errors|json}}
+    {{price.valid|json}}
+    <br>
+    <div *ngIf="$valid" (click)='createProduct()'>
+
+    </div>
+    <input type="submit" value="Reset" (click)='resetPage()'><input  type="submit" value="Create" (click)='createProduct()'>
+  </form>
+</div>
